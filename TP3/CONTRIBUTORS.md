@@ -1,2 +1,2 @@
-1. 
-2. 
+1. Pierre FRON
+2. Stanislas SASSOLAS

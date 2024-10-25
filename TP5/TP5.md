@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 
 Exécutez le programme en saisissant le nom d'un répertoire lors de l'exécution, et il affichera récursivement la liste des fichiers, répertoires et sous-répertoires présents dans ce répertoire et ses sous-répertoires. Utilisez le principe de la fonction récursive pour parcourir tous les niveaux du répertoire.
 
-## Exercice 5.3 [★★]
+## Exercice 5.3 [★★] // pas encore fait
 
 **Liste itérative de fichiers et répertoires dans un dossier**
 

@@ -49,6 +49,8 @@ int renvoie_message(int client_socket_fd, char *data)
  */
 int recois_envoie_message(int client_socket_fd, char *data)
 {
+  
+  /* // Ancienne partie du code
   printf("Message reçu: %s\n", data);
   char code[10];
   if (sscanf(data, "%9s:", code) == 1) // Assurez-vous que le format est correct
@@ -57,7 +59,26 @@ int recois_envoie_message(int client_socket_fd, char *data)
     {
       return renvoie_message(client_socket_fd, data);
     }
+  }*/
+
+  // Nouvelle partie du code issue de client.c
+  // Demande à l'utilisateur d'entrer un message
+  char message[1024];
+  printf("Votre message (max 1000 caractères): ");
+  fgets(message, sizeof(message), stdin);
+
+  // Construit le message avec une étiquette "message: "
+  strcpy(data, "message: ");
+  strcat(data, message);
+
+  // Envoie le message au client
+  int write_status = renvoie_message(client_socket_fd, data);;
+  if (write_status < 0)
+  {
+    perror("Erreur d'écriture");
+    return -1;
   }
+
 
   return (EXIT_SUCCESS);
 }
